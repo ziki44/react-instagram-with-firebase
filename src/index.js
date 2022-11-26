@@ -35,3 +35,8 @@ root.render(
     <RouterProvider router={routes} />
   </React.StrictMode>
 );
+
+
+// 1. Przenies formularz sluzacy do dodawania elementow do listy, do podstrony add. W momencie jak uda sie dodac nowy rekord, to przekieruj uzytkownika na strone glowna
+
+// 2. Wyrzuc funkcje getMessage oraz editMessage do pliku helpers/http.js (w EditPage.js)

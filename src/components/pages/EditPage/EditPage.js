@@ -5,6 +5,7 @@ import Footer from "components/sections/Footer/Footer";
 import Header from "components/sections/Header/Header";
 import WelcomeMessage from "components/sections/WelcomeMessage/WelcomeMessage";
 import MessagesForm from "components/sections/MessagesForm/MessagesForm";
+import { getMessage, editMessage } from 'helpers/http';
 
 function EditPage() {
   const [authorInput, setAuthorInput] = useState('');
@@ -20,8 +21,7 @@ function EditPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/messages/${params.messageId}`)
-      .then(res => res.json())
+    getMessage(params.messageId)
       .then(data => {
         // potrzebuje wypelnic inputy danymi, ktore pochodza z BE
         setAuthorInput(data.author)
@@ -60,17 +60,11 @@ function EditPage() {
       message: messageInput
     }
 
-    fetch(`http://localhost:5000/messages/${params.messageId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-type': "application/json"
-      },
-      body: JSON.stringify(editedMessage)
-    })
-    .then(() => {
-      // Jak sie uda zmienic rekord w bazie, to potrzebuje przekierowac uzytkownika na strone glowna
-      navigate('/')
-    })
+    editMessage(params.messageId, editedMessage)
+      .then(() => {
+        // Jak sie uda zmienic rekord w bazie, to potrzebuje przekierowac uzytkownika na strone glowna
+        navigate('/')
+      })
 
     // Czyszczenie pol formularza
     setAuthorInput('');

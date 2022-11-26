@@ -16,9 +16,24 @@
       "message": "ssa"
     },
     {
-      "author": "Zmieniony Author",
-      "message": "Zmienione Message",
+      "author": "Zmieniony Author111",
+      "message": "Zmienione Message123",
       "id": 1669463987528
+    },
+    {
+      "id": 1669478222396,
+      "author": "dsadasdsa",
+      "message": "3213213132"
+    },
+    {
+      "id": 1669478230101,
+      "author": "xxxxx",
+      "message": "yyyyy"
+    },
+    {
+      "id": 1669478314917,
+      "author": "Dodaje nowy posty",
+      "message": "o 16:58"
     }
   ],
   "users": []
