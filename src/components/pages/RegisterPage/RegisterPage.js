@@ -5,6 +5,7 @@ import Footer from "components/sections/Footer/Footer"
 import Header from "components/sections/Header/Header"
 import WelcomeMessage from "components/sections/WelcomeMessage/WelcomeMessage"
 import LoginRegisterForm from "components/sections/LoginRegisterForm/LoginRegisterForm";
+import { registerUser } from "helpers/http";
 
 function RegisterPage() {
   const [emailInputValue, setEmailInputValue] = useState('');
@@ -41,17 +42,10 @@ function RegisterPage() {
       avatar: ''
     }
 
-    fetch('http://localhost:5000/users', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(newUser)
-    })
-    .then(() => {
-      navigate('/')
-    })
-
+    registerUser(newUser)
+      .then(() => {
+        navigate('/')
+      })
   }
 
   const handleEmailChange = (event) => {

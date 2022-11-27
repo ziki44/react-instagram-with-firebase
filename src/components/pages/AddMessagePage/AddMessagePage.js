@@ -5,6 +5,7 @@ import MessagesForm from 'components/sections/MessagesForm/MessagesForm';
 import Footer from "components/sections/Footer/Footer"
 import Header from "components/sections/Header/Header"
 import WelcomeMessage from 'components/sections/WelcomeMessage/WelcomeMessage';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 
 import { addMessage } from 'helpers/http'
 
@@ -76,8 +77,7 @@ function AddMessagePage() {
     setMessageInput('');
   }
   return (
-    <div>
-      <Header logo="Instagram App"/>
+    <MainTemplate>
       <WelcomeMessage>
         <h3>Add new post</h3>
       </WelcomeMessage>
@@ -91,7 +91,7 @@ function AddMessagePage() {
         isMessageInputError={isMessageInputError}
       />
       <Footer />
-    </div>
+    </MainTemplate>
 
   )
 }

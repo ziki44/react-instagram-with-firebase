@@ -1,13 +1,10 @@
-import Footer from "components/sections/Footer/Footer";
-import Header from "components/sections/Header/Header";
+import MainTemplate from "components/templates/MainTemplate/MainTemplate";
 
 function AboutPage() {
   return (
-    <div>
-      <Header />
+    <MainTemplate>
       <h1>Hello from About Page</h1>
-      <Footer />
-    </div>
+    </MainTemplate>
   )
 }
 

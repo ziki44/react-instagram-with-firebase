@@ -5,6 +5,7 @@ import LoginRegisterForm from "components/sections/LoginRegisterForm/LoginRegist
 import Footer from "components/sections/Footer/Footer"
 import Header from "components/sections/Header/Header"
 import WelcomeMessage from "components/sections/WelcomeMessage/WelcomeMessage"
+import { loginUser } from "helpers/http";
 
 function LoginPage() {
   const [emailInputValue, setEmailInputValue] = useState('');
@@ -46,8 +47,7 @@ function LoginPage() {
     //   })
 
     // moge skorzystac z queryparams zeby wyszukac konkretnego uzytkownika
-    fetch(`http://localhost:5000/users?email=${emailInputValue}`)
-      .then(res => res.json())
+    loginUser()
       .then((users) => {
         // to bedzie pierwszy element tablicy
         const currentUser = users[0];

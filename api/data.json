@@ -82,6 +82,13 @@
       "password": "123456",
       "name": "",
       "avatar": ""
+    },
+    {
+      "id": 1669549761430,
+      "email": "damian2@wp.pl",
+      "password": "123123123",
+      "name": "",
+      "avatar": ""
     }
   ]
 }
