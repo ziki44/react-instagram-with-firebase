@@ -33,7 +33,7 @@ function HomePage() {
     <div>
       <Header logo="Instagram App"/>
       <WelcomeMessage>
-        <p>Messages List</p>
+        <h3>Messages List</h3>
       </WelcomeMessage>
       <MessagesList
         messages={messages}

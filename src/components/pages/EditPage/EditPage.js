@@ -49,7 +49,6 @@ function EditPage() {
     //   setIsAuthorInputError(false)
     // }
 
-
     if(!isValid) {
       // jesli w funkcji uzywamy return, to JS nie wejdzie do dalszego wywolania funkcji
       return;
@@ -103,3 +102,14 @@ function EditPage() {
 }
 
 export default EditPage;
+
+
+// - Stworz strone LoginPage i RegisterPage.
+// - Na tych podstronach uzyj komponentu Header i Footer.
+// - Podlinkuj strone login i register w Headerze i Footerze
+
+// - Na podstronie Register po kliknieciu przycisku Send, stworz w bazie danych (http://localhost:5000/users) nowego uzytkownika. Kazdy uzytkownik powinien miec pole email, password, name i avatar. W momencie tworzenia uzytkownika, pole name i avatar powinno byc puste. Jak uda sie pozytywnie zarejestrowac, przekieruj na strone glowna
+
+// - Stworz osobna sekcje o nazwie LoginRegisterForm, ktory bedzie tworzyl formularz zawierajacy 2 pola - email i haslo
+
+// * Zrob obsluge logowania (http://localhost:5000/users?email='XXX')
