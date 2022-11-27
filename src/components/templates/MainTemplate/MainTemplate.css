@@ -1,0 +1,5 @@
+.main-template {
+  max-width: 640px;
+  margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}

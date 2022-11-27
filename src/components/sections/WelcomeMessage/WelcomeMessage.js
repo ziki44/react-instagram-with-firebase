@@ -1,6 +1,8 @@
+import './WelcomeMessage.css';
+
 function WelcomeMessage(props) {
   return (
-    <div>
+    <div className="welcome-message">
       {props.children}
     </div>
   )

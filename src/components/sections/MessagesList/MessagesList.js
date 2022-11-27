@@ -4,7 +4,7 @@ import './MessagesList.css'
 
 function MessagesList(props) {
   return (
-    <ul>
+    <ul className="messages-list">
       {
         props.messages.map(message => {
           return (

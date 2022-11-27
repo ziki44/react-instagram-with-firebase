@@ -22,9 +22,11 @@ function EditPage() {
   useEffect(() => {
     getMessage(params.messageId)
       .then(data => {
+        // potrzebuje uzyc metody toJSON, poniewaz jest ona wymagana przez FB aby dostac realne dane
+        const message = data.toJSON()
         // potrzebuje wypelnic inputy danymi, ktore pochodza z BE
-        setAuthorInput(data.author)
-        setMessageInput(data.message);
+        setAuthorInput(message.author)
+        setMessageInput(message.message);
       })
   }, [])
 
@@ -54,6 +56,7 @@ function EditPage() {
     }
 
     const editedMessage = {
+      id: params.messageId,
       author: authorInput,
       message: messageInput
     }

@@ -1,9 +1,11 @@
 import Footer from "components/sections/Footer/Footer"
 import Header from "components/sections/Header/Header"
 
+import './MainTemplate.css';
+
 function MainTemplate (props) {
   return (
-    <div>
+    <div className="main-template">
       <Header logo="Instagram App"/>
       {props.children}
       <Footer />

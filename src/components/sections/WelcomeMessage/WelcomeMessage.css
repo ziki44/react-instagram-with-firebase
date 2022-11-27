@@ -1,0 +1,6 @@
+.welcome-message {
+  display: inline-block;
+  margin: 10px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}

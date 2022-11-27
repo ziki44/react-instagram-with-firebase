@@ -68,9 +68,8 @@ function AddMessagePage() {
     }
 
     addMessage(newMessage)
-      .then((x) => {
-        console.log(x)
-        // navigate('/');
+      .then(() => {
+        navigate('/');
       })
       .catch(console.log)
 

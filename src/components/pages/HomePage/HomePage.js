@@ -9,7 +9,6 @@ import {
   // getMessages,
   getMessagesFromFB
 } from 'helpers/http';
-import Footer from 'components/sections/Footer/Footer';
 
 function HomePage() {
   const [messages, setMessages] = useState([]);
@@ -23,12 +22,11 @@ function HomePage() {
   }, [])
 
   const handleMessageRemove = (id) => {
-    const filteredMessage = messages.filter(message => {
-      return message.id !== id
-    })
-
+    // const filteredMessage = messages.filter(message => {
+    //   return message.id !== id
+    // })
     removeMessage(id)
-    setMessages(filteredMessage)
+    // setMessages(filteredMessage)
   }
 
   return (

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import './Footer.css';
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       Instagram App - Footer
 
       <nav>
