@@ -68,9 +68,11 @@ function AddMessagePage() {
     }
 
     addMessage(newMessage)
-      .then(() => {
-        navigate('/');
+      .then((x) => {
+        console.log(x)
+        // navigate('/');
       })
+      .catch(console.log)
 
     // Czyszczenie pol formularza
     setAuthorInput('');
@@ -90,7 +92,6 @@ function AddMessagePage() {
         isAuthorInputError={isAuthorInputError}
         isMessageInputError={isMessageInputError}
       />
-      <Footer />
     </MainTemplate>
 
   )

@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from "helpers/firebase";
 
-import Footer from "components/sections/Footer/Footer"
-import Header from "components/sections/Header/Header"
+import MainTemplate from "components/templates/MainTemplate/MainTemplate";
 import WelcomeMessage from "components/sections/WelcomeMessage/WelcomeMessage"
 import LoginRegisterForm from "components/sections/LoginRegisterForm/LoginRegisterForm";
-import { registerUser } from "helpers/http";
 
 function RegisterPage() {
   const [emailInputValue, setEmailInputValue] = useState('');
@@ -31,18 +31,7 @@ function RegisterPage() {
       return;
     }
 
-
-    const randomId = Date.now();
-
-    const newUser = {
-      id: randomId,
-      email: emailInputValue,
-      password: passwordInputValue,
-      name: '',
-      avatar: ''
-    }
-
-    registerUser(newUser)
+    createUserWithEmailAndPassword(auth, emailInputValue, passwordInputValue)
       .then(() => {
         navigate('/')
       })
@@ -57,8 +46,7 @@ function RegisterPage() {
   }
 
   return (
-    <div>
-      <Header />
+    <MainTemplate>
       <WelcomeMessage>
         <h3>Register Page</h3>
       </WelcomeMessage>
@@ -72,8 +60,7 @@ function RegisterPage() {
         isPasswordInputError={isPasswordInputError}
         submitText="Register"
       />
-      <Footer />
-    </div>
+    </MainTemplate>
   )
 }
 

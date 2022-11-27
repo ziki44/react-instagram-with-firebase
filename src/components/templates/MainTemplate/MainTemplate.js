@@ -17,3 +17,5 @@ export default MainTemplate
 // 1. Sprawdz czy to dziala
 // 2. Uzyj templatki na wszystkich podstronach
 // 3. Do templatki wrzuc komponent WelcomeMessage
+
+// Przerwa do 14

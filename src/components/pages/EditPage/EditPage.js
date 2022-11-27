@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-import Footer from "components/sections/Footer/Footer";
-import Header from "components/sections/Header/Header";
 import WelcomeMessage from "components/sections/WelcomeMessage/WelcomeMessage";
 import MessagesForm from "components/sections/MessagesForm/MessagesForm";
 import { getMessage, editMessage } from 'helpers/http';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 
 function EditPage() {
   const [authorInput, setAuthorInput] = useState('');
@@ -79,9 +78,7 @@ function EditPage() {
   }
 
   return (
-    <div>
-      <Header />
-
+    <MainTemplate>
       <WelcomeMessage>
         <h3>Edit your message</h3>
       </WelcomeMessage>
@@ -95,9 +92,7 @@ function EditPage() {
         isAuthorInputError={isAuthorInputError}
         isMessageInputError={isMessageInputError}
       />
-
-      <Footer />
-    </div>
+    </MainTemplate>
   )
 }
 

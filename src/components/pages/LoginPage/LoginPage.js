@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "helpers/firebase";
 
 import LoginRegisterForm from "components/sections/LoginRegisterForm/LoginRegisterForm";
-import Footer from "components/sections/Footer/Footer"
-import Header from "components/sections/Header/Header"
 import WelcomeMessage from "components/sections/WelcomeMessage/WelcomeMessage"
-import { loginUser } from "helpers/http";
+// import { loginUser } from "helpers/http";
+import MainTemplate from "components/templates/MainTemplate/MainTemplate";
 
 function LoginPage() {
   const [emailInputValue, setEmailInputValue] = useState('');
@@ -47,18 +48,25 @@ function LoginPage() {
     //   })
 
     // moge skorzystac z queryparams zeby wyszukac konkretnego uzytkownika
-    loginUser()
-      .then((users) => {
-        // to bedzie pierwszy element tablicy
-        const currentUser = users[0];
+    // loginUser()
+    //   .then((users) => {
+    //     // to bedzie pierwszy element tablicy
+    //     const currentUser = users[0];
 
-        if(currentUser && currentUser.password === passwordInputValue) {
-          navigate('/')
-        } else {
-          setIsLoginError(true);
-        }
+    //     if(currentUser && currentUser.password === passwordInputValue) {
+    //       navigate('/')
+    //     } else {
+    //       setIsLoginError(true);
+    //     }
+    //   })
+
+    signInWithEmailAndPassword(auth, emailInputValue, passwordInputValue)
+      .then(() => {
+        navigate('/')
       })
-
+      .catch(() => {
+        setIsLoginError(true);
+      })
   }
 
   const handleEmailChange = (event) => {
@@ -70,8 +78,7 @@ function LoginPage() {
   }
 
   return (
-    <div>
-      <Header />
+    <MainTemplate>
       <WelcomeMessage>
         <h3>Login Page</h3>
       </WelcomeMessage>
@@ -87,9 +94,7 @@ function LoginPage() {
         submitText="Login"
         isLoginError={isLoginError}
       />
-
-      <Footer />
-    </div>
+    </MainTemplate>
   )
 }
 
